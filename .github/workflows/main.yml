@@ -16,7 +16,7 @@ jobs:
           python-version: "3.10"
       - name: Starting the unit_tests
         run: |
-          python -m unittest unit_tests.py
+          python -m unit_tests
 
   for_windows:
     runs-on: windows-latest
@@ -29,4 +29,4 @@ jobs:
           python-version: "3.10"
       - name: Starting the unit_tests
         run: |
-          python -m unittest unit_tests.py
+          python -m unit_tests
