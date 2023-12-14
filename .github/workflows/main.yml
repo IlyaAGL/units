@@ -1,0 +1,31 @@
+name: CI_CD
+
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  for_ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking the repository
+      - uses: actions/checkout@v3
+      - name: Install python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Starting the unit_tests
+        run:
+          python.exe -m unittest unit_tests.py
+
+  for_windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checking the repository
+      - uses: actions/checkout@v3
+      - name: Install python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Starting the unit_tests
+        run:
+          python.exe -m unittest unit_tests.py
